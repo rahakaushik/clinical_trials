@@ -1,0 +1,474 @@
+CTTI note,column,data type,db schema,db section,nlm doc,row count,source,table
+"Date when a sponsor indicates that they will be delaying posting of results (and are certifying initial approval or new use), or when they apply for an extension of the deadline. Per NLM: ""The _submitted suffix indicates the date that the responsible party pressed the release button in the ClinicalTrials.gov data submission system, thereby submitting the data for review prior to posting.""",disposition_first_submitted_date,date,ctgov,protocol,"",,ProtocolSection.StatusModule.DispFirstSubmitDate,studies
+"<html>Per NLM: ""<i>The _submitted suffix indicates the date that the responsible party pressed the release button in the ClinicalTrials.gov data submission system, thereby submitting the data for review prior to posting</i>.""</html>",study_first_submitted_date,date,ctgov,protocol,"",,ProtocolSection.StatusModule.StudyFirstSubmitDate,studies
+"The value of the start date exactly as it is provided by ClinicalTrials.gov. Some studies have only month/year defined for the start date (ie. October, 2014). That value is stored in this column and the start_date column converts this value to a date by assigning it the first day of the month.",start_month_year,string,ctgov,protocol,<html><u>StartDate</u></html>,,ProtocolSection.StatusModule.StartDateStruct.StartDate,studies
+Date NLM made study available via their API.,nlm_download_date_description,string,ctgov,protocol,"",,n/a,studies
+"<html>Per NLM: ""<i>The _submitted suffix indicates the date that the responsible party pressed the release button in the ClinicalTrials.gov data submission system, thereby submitting the data for review prior to posting.""</i></html>",last_update_submitted_date,date,ctgov,protocol,"",,ProtocolSection.StatusModule.LastUpdateSubmitDate,studies
+"This value is only available for studies that have results.  It is the date when the results were first received.  Per NLM: ""The _submitted suffix indicates the date that the responsible party pressed the release button in the ClinicalTrials.gov data submission system, thereby submitting the data for review prior to posting.""",results_first_submitted_date,date,ctgov,protocol,"",,ProtocolSection.StatusModule.ResultsFirstSubmitDate,studies
+"",start_date_type,string,ctgov,protocol,<html><u>StartDate</u></html>,,ProtocolSection.StatusModule.StartDateStruct.StartDateType,studies
+"The date the study started in a date-type format so that it can be used to find studies before/after/inclusive of a date or dates.  For studies that only provide month/year, the last day of the month is used.",start_date,date,ctgov,protocol,<html><u>StartDate</u></html>,,ProtocolSection.StatusModule.StartDateStruct.StartDate,studies
+"The value of the verification date exactly as it is provided by ClinicalTrials.gov. Some studies have only month/year defined for the verification date (ie. October, 2014). That value is stored in this column and the verification_date column converts this value to a date by assigning it the first day of the month.",verification_month_year,string,ctgov,protocol,<html><u>VerificationDate</u></html>,,ProtocolSection.StatusModule.StatusVerifiedDate,studies
+"The date the study was last verified in a date-type format so that it can be used to find studies before/after/inclusive of a date or dates.  For studies that only provide month/year, the last day of the month is used.",verification_date,date,ctgov,protocol,<html><u>VerificationDate</u></html>,,ProtocolSection.StatusModule.StatusVerifiedDate,studies
+"The value of the completion date exactly as it is provided by ClinicalTrials.gov. Some studies have only month/year defined for the completion date (ie. October, 2014). That value is stored in this column and the completion_date column converts this value to a date by assigning it the first day of the month.",completion_month_year,string,ctgov,protocol,<html><u>LastFollowUpDate</u></html>,,ProtocolSection.StatusModule.CompletionDateStruct.CompletionDate,studies
+"The date the study was completed (as defined by NLM) in a date-type format so that it can be used to find studies before/after/inclusive of a date or dates.  For studies that only provide month/year, the last day of the month is used.",completion_date,date,ctgov,protocol,<html><u>LastFollowUpDate</u></html>,,ProtocolSection.StatusModule.CompletionDateStruct.CompletionDate,studies
+"<html><u>(primary key)  NCT ID is a unique identification code given to each clinical study registered on ClinicalTrials.gov. The format is the letters ""NCT"" followed by an 8-digit number (for example, NCT00000419).</u></html>",nct_id,string,ctgov,protocol,"",375612,ProtocolSection.IdentificationModule.NCTId ,studies
+Location of Facilities (Imputed Using Removed Countries) Derived from country in address listed for study facilities.  Also incorporates information from countries where all sites from a particular country were removed from the study record.,us_coderc,string,proj_results_reporting,projects,"",,n/a,analyzed_studies
+"The value of the primary completion date exactly as it is provided by ClinicalTrials.gov. Some studies have only month/year defined for the primary completion date (ie. October, 2014). That value is stored in this column and the primary_completion_date column converts this value to a date by assigning it the first day of the month.",primary_completion_month_year,string,ctgov,protocol,<html><u>PrimaryCompletionDate</u></html>,,ProtocolSection.StatusModule.PrimaryCompletionDateStruct.PrimaryCompletionDate,studies
+"The primary completion date for the study (as defined by NLM) in a date-type format so that it can be used to find studies before/after/inclusive of a date or dates.  For studies that only provide month/year, the last day of the month is used.",primary_completion_date,date,ctgov,protocol,<html><u>PrimaryCompletionDate</u></html>,,ProtocolSection.StatusModule.PrimaryCompletionDateStruct.PrimaryCompletionDateType,studies
+"NLM data dictionary reports this as Yes/No, but data actually stored as an affirmative statement or a negative statement as indicated in the enumerations tab.  Studies with a negative value for this variable provide information about any results disclosure restrictions on PI(s). This information is captured in the RESTRICTIVE_AGREEMENT variable in the RESULTS_RESTRICTION_AGREEMENTS table.",pi_employee,string,ctgov,results,<html><u>Result_CertainAgreementLabel</u></html>,,ResultsSection.MoreInfoModule.CertainAgreement.AgreementPISponsorEmployee,result_agreements
+"The number of arms for interventional studies, it is NULL when the study is an interventional study	",number_of_groups,integer,ctgov,protocol,<html><u>NumberOfGroups</u></html>,,n/a,studies
+Uses the tag label to identify the type of event this row represents,event,string,ctgov,annotation,"",,AnnotationSection.AnnotationModule.UnpostedAnnotation.UnpostedEventList.UnpostedEvent.UnpostedEventType,pending_results
+This is the date-type value of anticipated_posting_month_year.  The last day of the month is used as the 'day'.,anticipated_posting_date,date,ctgov,results,<html><u>OutcomeAnticipatedPostDate</u></html>,,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeMeasureAnticipatedPostingDate,outcomes
+"",completion_date_type,string,ctgov,protocol,<html><u>LastFollowUpDate</u></html>,,ProtocolSection.StatusModule.CompletionDateStruct.CompletionDateType,studies
+"<html>Per NLM: ""<i>The _submitted_qc suffix indicates the submission date of the version of the record that met quality control criteria. It is common for there to be revisions between the first submission and the submission that meets qc criteria. Note this is not the date that the qc review was completed.""</i></html>",study_first_submitted_qc_date,date,ctgov,protocol,"",,ProtocolSection.StatusModule.StudyFirstSubmitQCDate,studies
+"<html>Per NLM: <i>""The _posted suffix indicates the date that a submission was made public on ClinicalTrials.gov. Typically, posting occurs the business day after qc review was successfully completed. We began collecting posted dates in early 2017. Dates from before then are estmates. All posted dates include a type attribute of Actual or Estimate.""</i></html>",study_first_posted_date,date,ctgov,protocol,"",,ProtocolSection.StatusModule.StudyFirstPostDateStruct.StudyFirstPostDate,studies
+"<html>Per NLM: ""<i>The _submitted_qc suffix indicates the submission date of the version of the record that met quality control criteria. It is common for there to be revisions between the first submission and the submission that meets qc criteria. Note this is not the date that the qc review was completed.""</i></html>",disposition_first_submitted_qc_date,date,ctgov,protocol,"",,ProtocolSection.StatusModule.DispFirstSubmitQCDate,studies
+"<html>Per NLM: ""<i>The _posted suffix indicates the date that a submission was made public on ClinicalTrials.gov. Typically, posting occurs the business day after qc review was successfully completed. We began collecting posted dates in early 2017. Dates from before then are estmates. All posted dates include a type attribute of Actual or Estimate.""</i></html>",disposition_first_posted_date,date,ctgov,protocol,"",,ProtocolSection.StatusModule.DispFirstPostDateStruct.DispFirstPostDate,studies
+"",ipd_access_criteria,string,ctgov,protocol,"",,ProtocolSection.IPDSharingStatementModule.IPDSharingAccessCriteria,studies
+"",name,string,ctgov,protocol,"",,ProtocolSection.IPDSharingStatementModule.IPDSharingInfoTypeList.IPDSharingInfoType,ipd_information_types
+"<html>Per NLM: ""<i>The _submitted_qc suffix indicates the submission date of the version of the record that met quality control criteria. It is common for there to be revisions between the first submission and the submission that meets qc criteria. Note this is not the date that the qc review was completed</i>.""</html>",results_first_submitted_qc_date,date,ctgov,protocol,"",,ProtocolSection.StatusModule.ResultsFirstSubmitQCDate,studies
+"<html>Per NLM: <i>""The _posted suffix indicates the date that a submission was made public on ClinicalTrials.gov. Typically, posting occurs the business day after qc review was successfully completed. We began collecting posted dates in early 2017. Dates from before then are estmates. All posted dates include a type attribute of Actual or Estimate.""</i></html>",results_first_posted_date,date,ctgov,protocol,"",,ProtocolSection.StatusModule.ResultsFirstPostDateStruct.ResultsFirstPostDate,studies
+"<html>Per NLM: <i>""The _submitted_qc suffix indicates the submission date of the version of the record that met quality control criteria. It is common for there to be revisions between the first submission and the submission that meets qc criteria. Note this is not the date that the qc review was complete</i>d.""</html>",last_update_submitted_qc_date,date,ctgov,protocol,"",,ProtocolSection.StatusModule.LastUpdateSubmitDate,studies
+"<html>Per NLM: <i>""From a utility standpoint, the new <last_update_posted> date is likely the date that most people want to search. We previously did not have this date available and the old <lastchanged_date> was the closest alternative, though problematic because it never meant what was implied by the name. The _posted suffix indicates the date that a submission was made public on ClinicalTrials.gov. Typically, posting occurs the business day after qc review was successfully completed. We began collecting posted dates in early 2017. Dates from before then are estmates. All posted dates include a type attribute of Actual or Estimate.""</i></html>",last_update_posted_date,date,ctgov,protocol,"",,ProtocolSection.StatusModule.LastUpdatePostDateStruct.LastUpdatePostDate,studies
+"",target_duration,string,ctgov,protocol,<html><u>LastFollowUpDate</u></html>,,ProtocolSection.DesignModule.TargetDuration,studies
+"",baseline_population,text,ctgov,results,<html><u>BaselineAnalysisPopulation</u></html>,,ResultsSection.BaselineCharacteristicsModule.BaselinePopulationDescription,studies
+"",acronym,string,ctgov,protocol,<html><u>Acronym</u></html>,,ProtocolSection.IdentificationModule.Acronym,studies
+"",param_type,string,ctgov,results,<html><u>Result_Outcome_MeasureLabel</u></html>,,ResultsSection.BaselineCharacteristicsModule.BaselineMeasureList.BaselineMeasure.BaselineMeasureParamType,outcome_measurements
+"",brief_title,text,ctgov,protocol,<html><u>BriefTitle</u></html>,,ProtocolSection.IdentificationModule.BriefTitle,studies
+"",primary_completion_date_type,string,ctgov,protocol,<html><u>PrimaryCompletionDate</u></html>,,ProtocolSection.StatusModule.PrimaryCompletionDateStruct.PrimaryCompletionDateType,studies
+AACT assigned primary key,id,integer,ctgov,protocol,,633066,n/a,browse_conditions
+"",study_type,string,ctgov,protocol,<html><u>StudyType</u></html>,,ProtocolSection.DesignModule.StudyType,studies
+"For Interventional Study Design, Enrollment is required by FDAAA.    For Observational Study Design, Enrollment is required by ClinicalTrials.gov (*)",enrollment,integer,ctgov,protocol,<html><u>IntEnrollment</u></html>,,ProtocolSection.DesignModule.EnrollmentInfo.EnrollmentCount,studies
+AACT foreign key to Study,nct_id,string,ctgov,protocol,"",,ProtocolSection.IdentificationModule.NCTId,ipd_information_types
+AACT foreign key to Study,nct_id,string,ctgov,protocol,"",,ProtocolSection.IdentificationModule.NCTId,design_group_interventions
+AACT foreign key to Study,nct_id,string,ctgov,protocol,<html><u>BriefSummary</u></html>,,ProtocolSection.IdentificationModule.NCTId,brief_summaries
+"",official_title,text,ctgov,protocol,<html><u>OfficialTitle</u></html>,,ProtocolSection.IdentificationModule.OfficialTitle,studies
+"",source,string,ctgov,protocol,<html><u>https://prsinfo.clinicaltrials.gov/definitions.html</u></html>,,ProtocolSection.IdentificationModule.Organization.OrgFullName,studies
+(AACT assigned timestamp) Date/time the study was loaded into AACT from ClinicalTrials.gov,created_at,timestamps,ctgov,protocol,,,n/a,studies
+"(AACT assigned timestamp) Last date/time the row was modified (At this point, this value should always be same ascreated_at)",updated_at,timestamps,ctgov,protocol,,,n/a,studies
+AACT assigned foreign key,design_group_id,integer,ctgov,protocol,,,n/a,design_group_interventions
+AACT assigned foreign key,intervention_id,integer,ctgov,protocol,,,n/a,design_group_interventions
+AACT assigned primary key,id,integer,ctgov,protocol,,30155,n/a,ipd_information_types
+AACT assigned primary key,id,integer,ctgov,protocol,,820143,n/a,design_group_interventions
+AACT assigned primary key,id,integer,ctgov,protocol,<html><u>BriefSummary</u></html>,374770,n/a,brief_summaries
+"",biospec_retention,string,ctgov,protocol,<html><u>ObsBiospecimenRetention</u></html>,,ProtocolSection.DesignModule.BioSpec.BioSpecRetention,studies
+"",expanded_access_type_individual,boolean,ctgov,protocol,<html><u>ExpandedAccessStatus</u></html>,,ProtocolSection.DesignModule.ExpandedAccessTypes.ExpAccTypeIndividual,studies
+"",expanded_access_type_intermediate,boolean,ctgov,protocol,<html><u>ExpandedAccessStatus</u></html>,,ProtocolSection.DesignModule.ExpandedAccessTypes.ExpAccTypeIntermediate,studies
+"",has_expanded_access,boolean,ctgov,protocol,<html><u>ExpandedAccessStatus</u></html>,,ProtocolSection.StatusModule.ExpandedAccessInfo.HasExpandedAccess,studies
+"",has_dmc,boolean,ctgov,protocol,<html><u>hasDMC</u></html>,,ProtocolSection.OversightModule.OversightHasDMC,studies
+"",is_fda_regulated_device,boolean,ctgov,protocol,<html><u>FDAReg</u></html>,,ProtocolSection.OversightModule.IsFDARegulatedDevice,studies
+"",is_ppsd,boolean,ctgov,protocol,<html><u>PediatricPostmarket</u></html>,,ProtocolSection.OversightModule.IsPPSD,studies
+"",is_unapproved_device,boolean,ctgov,protocol,<html><u>section801</u></html>,,ProtocolSection.OversightModule.IsUnapprovedDevice,studies
+"",last_known_status,string,ctgov,protocol,<html><u>OverallStatus</u></html>,,ProtocolSection.StatusModule.LastKnownStatus,studies
+"",phase,string,ctgov,protocol,<html><u>StudyPhase</u></html>,,ProtocolSection.DesignModule.PhaseList.Phase,studies
+"",plan_to_share_ipd,string,ctgov,protocol,PlantoShareIPD,,ProtocolSection.IPDSharingStatementModule.IPDSharing,studies
+"",limitations_and_caveats,string,ctgov,results,<html><u>Result_LimitationsAndCaveats_descriptionLabel</u></html>,,ResultsSection.MoreInfoModule.LimitationsAndCaveatsDescription,studies
+"",why_stopped,string,ctgov,protocol,<html><u>OverallStatus</u></html>,,ProtocolSection.StatusModule.WhyStopped,studies
+"",biospec_description,text,ctgov,protocol,<html><u>ObsBiospecimenRetention</u></html>,,ProtocolSection.DesignModule.BioSpec.BioSpecDescription,studies
+"",plan_to_share_ipd_description,string,ctgov,protocol,PlantoShareIPD,,ProtocolSection.IPDSharingStatementModule.IPDSharingDescription,studies
+"",ipd_time_frame,string,ctgov,protocol,"",,ProtocolSection.IPDSharingStatementModule.IPDSharingTimeFrame,studies
+"",ipd_url,string,ctgov,protocol,"",,ProtocolSection.IPDSharingStatementModule.IPDSharingURL,studies
+"",email,string,ctgov,protocol,<html><u>ContactEmail</u></html>,,ProtocolSection.ContactsLocationsModule.LocationList.Location.LocationContactList.LocationContact.LocationContactEMail,facility_contacts
+"",name,string,ctgov,protocol,<html><u>InterventionName</u></html>,,ProtocolSection.ArmsInterventionsModule.InterventionList.Intervention.InterventionName,interventions
+AACT foreign key to Study,nct_id,string,ctgov,protocol,"",,ProtocolSection.IdentificationModule.NCTId,browse_conditions
+AACT foreign key to Study,nct_id,string,ctgov,protocol,"",,ProtocolSection.IdentificationModule.NCTId,browse_interventions
+"",description,text,ctgov,protocol,<html><u>BriefSummary</u></html>,,ProtocolSection.DescriptionModule.BriefSummary,brief_summaries
+"",role,string,ctgov,protocol,<html><u>StudyOfficials</u></html>,,ProtocolSection.ContactsLocationsModule.OverallOfficialList.OverallOfficial.OverallOfficialRole,overall_officials
+"",intervention_type,string,ctgov,protocol,<html><u>InterventionType</u></html>,,ProtocolSection.ArmsInterventionsModule.InterventionList.Intervention.InterventionType,interventions
+"",subjects_at_risk,integer,ctgov,results,<html><u>SeriousAE_AtRisk</u></html>,,ResultsSection.AdverseEventsModule.SeriousEventList.SeriousEvent.SeriousEventStatsList.SeriousEventStats.SeriousEventStatsNumAtRisk or ResultsSection.AdverseEventsModule.OtherEventList.OtherEvent.OtherEventStatsList.OtherEventStats.OtherEventStatsNumAtRisk,reported_events
+"",category,string,ctgov,results,<html><u>CategoryTitle</u></html>,,ResultsSection.BaselineCharacteristicsModule.BaselineMeasureList.BaselineMeasure.BaselineClassList.BaselineClass.BaselineCategoryList.BaselineCategory.BaselineCategoryTitle,baseline_measurements
+"",param_type,string,ctgov,results,<html><u>BaselineParamType</u></html>,,ResultsSection.BaselineCharacteristicsModule.BaselineMeasureList.BaselineMeasure.BaselineMeasureParamType,baseline_measurements
+"",ctgov_group_code,string,ctgov,results,<html><u>Result_AdverseEventsImgResult_AdverseEvents_ArmGroup</u></html>,,ResultsSection.AdverseEventsModule.SeriousEventList.SeriousEvent.SeriousEventStatsList.SeriousEventStats.SeriousEventStatsGroupId or ResultsSection.AdverseEventsModule.OtherEventList.OtherEvent.OtherEventStatsList.OtherEventStats.OtherEventStatsGroupId,reported_events
+"",non_inferiority_description,text,ctgov,results,<html><u>NonInferComments</u></html>,,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeAnalysisList.OutcomeAnalysis.OutcomeAnalysisNonInferiorityComment,outcome_analyses
+"",ci_lower_limit,decimal,ctgov,results,<html><u>Result_Outcome_Analysis_ciLowerLimit</u></html>,,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeAnalysisList.OutcomeAnalysis.OutcomeAnalysisCILowerLimit,outcome_analyses
+"",estimate_description,text,ctgov,results,<html><u>Result_Outcome_Analysis_estimationComment</u></html>,,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeAnalysisList.OutcomeAnalysis.OutcomeAnalysisEstimateComment,outcome_analyses
+"",non_inferiority_type,string,ctgov,results,<html><u>NonInfer</u></html>,,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeAnalysisList.OutcomeAnalysis.OutcomeAnalysisNonInferiorityType,outcome_analyses
+Condition MeSH terms generated by NLM algorithm,mesh_term,string,ctgov,derived,"",,DerivedSection.ConditionBrowseModule.ConditionMeshList.ConditionMesh.ConditionMeshTerm or DerivedSection.ConditionBrowseModule.ConditionAncestorList.ConditionAncestor.ConditionAncestorTerm,browse_conditions
+AACT assigned primary key,id,integer,ctgov,protocol,,255332,n/a,browse_interventions
+Intervention MeSH terms generated by NLM algorithm,mesh_term,string,ctgov,protocol,"",,ProtocolSection.DerivedSection.InterventionBrowseModule.InterventionMeshList.InterventionMesh.InterventionMeshTerm,browse_interventions
+AACT foreign key to Study,nct_id,string,ctgov,protocol,"",,ProtocolSection.IdentificationModule.NCTId,calculated_values
+count number of related non-serious event rows,number_of_nsae_subjects,integer,ctgov,results,<html><u>OtherAE_Affected</u></html>,,ResultsSection.AdverseEventsModule.SeriousEventList.SeriousEvent.SeriousEventTerm,calculated_values
+count number of related serious event rows,number_of_sae_subjects,integer,ctgov,results,<html><u>SeriousTotalAffected</u></html>,,ResultsSection.AdverseEventsModule.OtherEventList.OtherEvent.OtherEventTerm,calculated_values
+Date NLM made study available via their API.,nlm_download_date,date,ctgov,protocol,"",,n/a,calculated_values
+AACT foreign key to Study,nct_id,string,ctgov,protocol,<html><u>OverallStudyContact</u></html>,,ProtocolSection.IdentificationModule.NCTId,central_contacts
+AACT assigned primary key,id,integer,ctgov,protocol,,375612,n/a,calculated_values
+AACT assigned primary key,id,integer,ctgov,protocol, ,147806,n/a,central_contacts
+AACT assigned primary key,id,integer,ctgov,protocol, ,636557,n/a,conditions
+Number of months between start_date & primary_completion_date,actual_duration,integer,ctgov,results,<html><u>PrimaryCompletionDate</u></html>,,<clinical_study>.<primary_completion_date> -,calculated_values
+Number of months between primary_completion_date & first_received_results_date,months_to_report_results,integer,ctgov,results,,,<clinical_study>.<results_reported_date> -,calculated_values
+count number of primary outcomes that the investigator intends to measure,number_of_primary_outcomes_to_measure,integer,ctgov,protocol,,,<clinical_study>.<study_design_info>.<primary_outcome>,calculated_values
+"",description,text,ctgov,protocol,<html><u>ArmsGroupsInterventionsBody</u></html>,,ProtocolSection.ArmsInterventionsModule.ArmGroupList.ArmGroup.ArmGroupDescription,design_groups
+count number of secondary outcomes that the investigator intends to measure,number_of_secondary_outcomes_to_measure,integer,ctgov,protocol,,,<clinical_study>.<study_design_info>.<secondary_outcome>,calculated_values
+count number of other outcomes that the investigator intends to measure,number_of_other_outcomes_to_measure,integer,ctgov,protocol,,,<clinical_study>.<study_design_info>.<other_outcome>,calculated_values
+Set to true if the study has just one facility,has_single_facility,boolean,ctgov,protocol,<html><u>Facility</u></html>,,n/a,calculated_values
+Set to true if the study has at least one facility in the USA. It is possible that some studies with sites in the USA will not be set to true if the study has not identified the facilities.,has_us_facility,boolean,ctgov,protocol,<html><u>Facility</u></html>,,n/a,calculated_values
+Year value of first_received_date which represents the year in which the study was registered,registered_in_calendar_year,integer,ctgov,protocol,<html><u>StartDate</u></html>,,<clinical_study>.<start_date>,calculated_values
+Set to true if clinical_results exist,were_results_reported,boolean,ctgov,results,,,<clinical_results>,calculated_values
+"<html> <i>'backup'</i> if value from <overall_contact_backup>
+<i>'regular'</i> if value from <overall_contact></html>",contact_type,string,ctgov,protocol,<html><u>OverallStudyContactBackup</u></html>,,<clinical_study>.(<overall_contact>or<overall_contact_backup>),central_contacts
+AACT foreign key to Study,nct_id,string,ctgov,protocol,ConditionsLabel,,ProtocolSection.IdentificationModule.NCTId,conditions
+"",name,string,ctgov,protocol,<html><u>OverallStudyContact</u></html>,,ProtocolSection.ContactsLocationsModule.CentralContactList.CentralContact.CentralContactName,central_contacts
+"",phone,string,ctgov,protocol,<html><u>OverallStudyContact</u></html>,,ProtocolSection.ContactsLocationsModule.CentralContactList.CentralContact.CentralContactPhone and ProtocolSection.ContactsLocationsModule.CentralContactList.CentralContact.CentralContactPhoneExt,central_contacts
+"",email,string,ctgov,protocol,<html><u>OverallStudyContact</u></html>,,ProtocolSection.ContactsLocationsModule.CentralContactList.CentralContact.CentralContactEMail,central_contacts
+"The number of groups for interventional studies, it is NULL when the study is not an interventional study",number_of_arms,integer,ctgov,protocol,<html><u>NumberOfArms</u></html>,,n/a,studies
+count number of related facility rows,number_of_facilities,integer,ctgov,protocol,<html><u>Facility</u></html>,,n/a,calculated_values
+convert minimum age to an integer,minimum_age_num,integer,ctgov,protocol,<html><u>EligibilityMinAge</u></html>,,  ProtocolSection.EligibilityModule.MinimumAge,calculated_values
+convert maximum age to an integer,maximum_age_num,integer,ctgov,protocol,<html><u>EligibilityMaxAge</u></html>,,  ProtocolSection.EligibilityModule.MaximumAge,calculated_values
+part of minimum age info that specifies units,minimum_age_unit,string,ctgov,protocol,<html><u>EligibilityMinAge</u></html>,,  ProtocolSection.EligibilityModule.MinimumAge,calculated_values
+part of maximum age info that specifies units,maximum_age_unit,string,ctgov,protocol,<html><u>EligibilityMaxAge</u></html>,,  ProtocolSection.EligibilityModule.MaximumAge,calculated_values
+AACT assigned primary key,id,integer,ctgov,protocol, ,530128,n/a,countries
+AACT foreign key to Study,nct_id,string,ctgov,protocol,<html><u>FacilityCountry</u></html>,,ProtocolSection.IdentificationModule.NCTId,countries
+"",name,string,ctgov,protocol,ConditionsLabel,,ProtocolSection.ConditionsModule.ConditionList.Condition,conditions
+<html><i>True</i><i> if value from removed_countries</i></html>,removed,boolean,ctgov,derived,<html><u>FacilityCountry</u></html>,,DerivedSection.MiscInfoModule.RemovedCountryList.RemovedCountry,countries
+"",name,string,ctgov,derived,<html><u>FacilityCountry</u></html>,,DerivedSection.MiscInfoModule.RemovedCountryList.RemovedCountry,countries
+AACT foreign key to Study,nct_id,string,ctgov,protocol,<html><u>ArmsGroupsInterventionsLabel</u></html>,,ProtocolSection.IdentificationModule.NCTId,design_groups
+"",group_type,string,ctgov,protocol,<html><u>ArmType</u></html>,,ProtocolSection.ArmsInterventionsModule.ArmGroupList.ArmGroup.ArmGroupType,design_groups
+The Design_Groups table contains info for study arms/groups that are provided when the study is registered.This table does not include results info  (see Result_Groups table.) ,id,integer,ctgov,protocol,<html><u>ArmsGroupsInterventionsLabel</u></html>,668350,n/a,design_groups
+"This tag is available only of those studies that have results and indicates the date when the results were first received.  This field captures the arm label or the group cohort label for the records coming from study tables, and arm/group title for the results tables. ",title,string,ctgov,protocol,<html><u>ArmsGroupsInterventionsBody</u></html>,,ProtocolSection.ArmsInterventionsModule.InterventionList.Intervention.InterventionArmGroupLabelList.InterventionArmGroupLabel,design_groups
+AACT foreign key to Study,nct_id,string,ctgov,protocol,<html><u>OutcomesBody</u></html>,,ProtocolSection.IdentificationModule.NCTId,design_outcomes
+AACT assigned primary key,id,integer,ctgov,protocol,<html><u>OutcomesBody</u></html>,2088215,n/a,design_outcomes
+"primary' if value from <primary_outcome>
+'secondary' if value from <secondary_outcome>",outcome_type,string,ctgov,results,<html><u>OutcomesBody</u></html>,,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeMeasureType,design_outcomes
+AACT foreign key to Study,nct_id,string,ctgov,protocol,<html><u>StudyDesignLabel</u></html>,,ProtocolSection.IdentificationModule.NCTId,designs
+"",measure,text,ctgov,protocol,<html><u>OutcomesBody</u></html>,,ProtocolSection.OutcomesModule.PrimaryOutcomeList.PrimaryOutcome.PrimaryOutcomeMeasure or ProtocolSection.OutcomesModule.SecondaryOutcomeList.SecondaryOutcome.SecondaryOutcomeMeasure or ProtocolSection.OutcomesModule.OtherOutcomeList.OtherOutcome.OtherOutcomeMeasure,design_outcomes
+"",time_frame,text,ctgov,protocol,<html><u>OutcomesBody</u></html>,,ProtocolSection.OutcomesModule.PrimaryOutcomeList.PrimaryOutcome.PrimaryOutcomeTimeFrame or ProtocolSection.OutcomesModule.SecondaryOutcomeList.SecondaryOutcome.SecondaryOutcomeTimeFrame,design_outcomes
+"",description,text,ctgov,protocol,<html><u>OutcomesBody</u></html>,,ProtocolSection.ArmsInterventionsModule.ArmGroupList.ArmGroup.ArmGroupDescription,design_outcomes
+"",population,string,ctgov,protocol,<html><u>OutcomesBody</u></html>,,Not using at the moment ,design_outcomes
+(AACT assigned primary key)  Many values in this table are derived Per NLM's data element <study_design>,id,integer,ctgov,protocol,<html><u>StudyDesignLabel</u></html>,375612,n/a,designs
+"",allocation,string,ctgov,protocol,<html><u>IntAllocation</u></html>,,ProtocolSection.DesignModule.DesignInfo.DesignAllocation,designs
+"",intervention_model,string,ctgov,protocol,<html><u>IntDesign</u></html>,,ProtocolSection.DesignModule.DesignInfo.DesignInterventionModel,designs
+"",observational_model,string,ctgov,protocol,<html><u>ObsStudyModel</u></html>,,ProtocolSection.DesignModule.DesignInfo.DesignObservationalModelList.DesignObservationalModel,designs
+"",primary_purpose,string,ctgov,protocol,IntPurpose,,ProtocolSection.DesignModule.DesignInfo.DesignPrimaryPurpose,designs
+"",time_perspective,string,ctgov,protocol,<html><u>ObsTiming</u></html>,,ProtocolSection.DesignModule.DesignInfo.DesignTimePerspectiveList.DesignTimePerspective,designs
+Parse content of 'Masking:' section. If it includes  'Subject' set to true,subject_masked,boolean,ctgov,protocol,IntMasking,,ProtocolSection.DesignModule.DesignInfo.DesignMaskingInfo.DesignWhoMaskedList.DesignWhoMasked,designs
+"",masking,string,ctgov,protocol,<html><u>IntMasking</u></html>,,ProtocolSection.DesignModule.DesignInfo.DesignMaskingInfo.DesignMasking,designs
+"",intervention_model_description,text,ctgov,protocol,<html><u>IntDesign</u></html>,,ProtocolSection.DesignModule.DesignInfo.DesignInterventionModelDescription,designs
+"",masking_description,text,ctgov,protocol,<html><u>IntMasking</u></html>,,ProtocolSection.DesignModule.DesignInfo.DesignMaskingInfo.DesignMaskingDescription,designs
+Parse content of 'Masking:' section. If it includes  'Caregiver' set to true,caregiver_masked,boolean,ctgov,protocol,<html><u>IntMasking</u></html>,,ProtocolSection.DesignModule.DesignInfo.DesignMaskingInfo.DesignWhoMaskedList.DesignWhoMasked,designs
+Parse content of 'Masking:' section. If it includes  'Investigator' set to true,investigator_masked,boolean,ctgov,protocol,<html><u>IntMasking</u></html>,,ProtocolSection.DesignModule.DesignInfo.DesignMaskingInfo.DesignWhoMaskedList.DesignWhoMasked,designs
+Parse content of 'Masking:' section. If it includes  'Outcomes_Assessor' set to true,outcomes_assessor_masked,boolean,ctgov,protocol,<html><u>IntMasking</u></html>,,ProtocolSection.DesignModule.DesignInfo.DesignMaskingInfo.DesignWhoMaskedList.DesignWhoMasked,designs
+AACT assigned primary key,id,integer,ctgov,protocol,<html><u>DetailedDescription</u></html>,249571,n/a,detailed_descriptions
+AACT foreign key to Study,nct_id,string,ctgov,protocol,<html><u>DetailedDescription</u></html>,,ProtocolSection.IdentificationModule.NCTId,detailed_descriptions
+AACT foreign key to Study,nct_id,string,ctgov,protocol,<html><u>DocumentUpload</u></html>,,ProtocolSection.IdentificationModule.NCTId,documents
+"",document_id,string,ctgov,protocol,<html><u>DocumentUpload</u></html>,,ProtocolSection.ReferencesModule.AvailIPDList.AvailIPD.AvailIPDId,documents
+"",document_type,string,ctgov,protocol,<html><u>DocumentUpload</u></html>,,ProtocolSection.ReferencesModule.AvailIPDList.AvailIPD.AvailIPDType,documents
+"",description,text,ctgov,protocol,<html><u>DetailedDescription</u></html>,,ProtocolSection.DescriptionModule.DetailedDescription,detailed_descriptions
+AACT assigned primary key,id,integer,ctgov,results,<html><u>DocumentUpload</u></html>,9733,n/a,documents
+AACT assigned primary key,id,integer,ctgov,results,<html><u>DocumentUpload</u></html>,23790,n/a,provided_documents
+AACT foreign key to Study,nct_id,string,ctgov,protocol,<html><u>DocumentUpload</u></html>,,ProtocolSection.IdentificationModule.NCTId,provided_documents
+"",has_protocol,boolean,ctgov,document,<html><u>DocumentUpload</u></html>,,DocumentSection.LargeDocumentModule.LargeDocList.LargeDoc.LargeDocHasProtocol,provided_documents
+"",document_type,string,ctgov,document,<html><u>DocumentUpload</u></html>,,DocumentSection.LargeDocumentModule.LargeDocList.LargeDoc.LargeDocLabel,provided_documents
+"",comment,string,ctgov,protocol,<html><u>DocumentUpload</u></html>,,ProtocolSection.ReferencesModule.AvailIPDList.AvailIPD.AvailIPDComment,documents
+"",url,string,ctgov,protocol,<html><u>DocumentUpload</u></html>,,ProtocolSection.ReferencesModule.AvailIPDList.AvailIPD.AvailIPDURL,documents
+AACT foreign key to Study,nct_id,string,ctgov,protocol,<html><u>EligibilityLabel</u></html>,,ProtocolSection.IdentificationModule.NCTId,eligibilities
+AACT foreign key to Study,nct_id,string,ctgov,protocol,<html><u>Facility</u></html>,,ProtocolSection.IdentificationModule.NCTId,facilities
+AACT foreign key to Study,nct_id,string,ctgov,protocol,<html><u>FacilityContact</u></html>,,ProtocolSection.IdentificationModule.NCTId,facility_contacts
+"<html><i>primary'</i><i> if from <contact>
+</i><i>'backup'</i><i> if from <contact_backup>
+</i></html>",contact_type,string,ctgov,protocol,<html><u>FacilityContact</u></html>,,ProtocolSection.ContactsLocationsModule.LocationList.Location.LocationContactList.LocationContact.LocationContactRole,facility_contacts
+"",url,string,ctgov,document,<html><u>DocumentUpload</u></html>,,DocumentSection.LargeDocumentModule.LargeDocList.LargeDoc.LargeDocFilename,provided_documents
+"",document_date,date,ctgov,document,<html><u>DocumentUpload</u></html>,,DocumentSection.LargeDocumentModule.LargeDocList.LargeDoc.LargeDocDate,provided_documents
+"",has_sap,boolean,ctgov,document,<html><u>DocumentUpload</u></html>,,DocumentSection.LargeDocumentModule.LargeDocList.LargeDoc.LargeDocHasSAP,provided_documents
+AACT assigned primary key,id,integer,ctgov,protocol,<html><u>EligibilityLabel</u></html>,375612,n/a,eligibilities
+AACT assigned foreign key,facility_id,integer,ctgov,protocol,<html><u>FacilityContact</u></html>,,n/a,facility_contacts
+AACT assigned primary key,id,integer,ctgov,protocol,<html><u>Facility</u></html>,2494726,n/a,facilities
+"AACT assigned primary key.  Facility contact information is available if the facility status (Facilities.Status) is ‘Recruiting’ or ‘Not yet recruiting’, and if the data provider has provided such information. Contact information is removed from the publicly available content at ClinicalTrials.gov when the facility is no longer recruiting, or when the overall study status (Studies.Overall_status) changes to indicate that the study has completed recruitment.",id,integer,ctgov,protocol,<html><u>FacilityContact</u></html>,334112,n/a,facility_contacts
+"",gender_based,boolean,ctgov,protocol,<html><u>EligibilityGender</u></html>,,ProtocolSection.EligibilityModule.GenderBased,eligibilities
+"",healthy_volunteers,string,ctgov,protocol,<html><u>HealthyVolunteers</u></html>,,ProtocolSection.EligibilityModule.HealthyVolunteers,eligibilities
+"",sampling_method,string,ctgov,protocol,<html><u>EligibilitySamplingMethod</u></html>,,ProtocolSection.EligibilityModule.SamplingMethod,eligibilities
+"",status,string,ctgov,protocol,<html><u>Facility</u></html>,,ProtocolSection.ContactsLocationsModule.LocationList.Location.LocationStatus,facilities
+"",has_icf,boolean,ctgov,document,<html><u>DocumentUpload</u></html>,,DocumentSection.LargeDocumentModule.LargeDocList.LargeDoc.LargeDocHasICF,provided_documents
+"",population,text,ctgov,protocol,<html><u>EligibilityStudyPopulation</u></html>,,ProtocolSection.EligibilityModule.StudyPopulation,eligibilities
+"",gender_description,text,ctgov,protocol,<html><u>GenderDescription</u></html>,,ProtocolSection.EligibilityModule.GenderDescription,eligibilities
+"",minimum_age,string,ctgov,protocol,<html><u>EligibilityMinAge</u></html>,,ProtocolSection.EligibilityModule.MinimumAge,eligibilities
+"",maximum_age,string,ctgov,protocol,<html><u>EligibilityMaxAge</u></html>,,ProtocolSection.EligibilityModule.MaximumAge,eligibilities
+"",criteria,text,ctgov,protocol,<html><u>EligibilityCriteria</u></html>,,ProtocolSection.EligibilityModule.EligibilityCriteria,eligibilities
+"",name,string,ctgov,protocol,<html><u>Facility</u></html>,,ProtocolSection.ContactsLocationsModule.LocationList.Location.LocationFacility,facilities
+"",city,string,ctgov,protocol,<html><u>Facility</u></html>,,ProtocolSection.ContactsLocationsModule.LocationList.Location.LocationCity,facilities
+"",state,string,ctgov,protocol,<html><u>Facility</u></html>,,ProtocolSection.ContactsLocationsModule.LocationList.Location.LocationState,facilities
+"",zip,string,ctgov,protocol,<html><u>Facility</u></html>,,ProtocolSection.ContactsLocationsModule.LocationList.Location.LocationZip,facilities
+"",country,string,ctgov,protocol,<html><u>Facility</u></html>,,ProtocolSection.ContactsLocationsModule.LocationList.Location.LocationCountry,facilities
+"",name,string,ctgov,protocol,<html><u>FacilityContact</u></html>,,ProtocolSection.ContactsLocationsModule.LocationList.Location.LocationContactList.LocationContact.LocationContactName,facility_contacts
+,affiliation,text,ctgov,protocol,<html><u>RespParty</u></html>,,<clinical_study>.<responsible_party>.<investigator_affiliation>,responsible_parties
+"",gender,string,ctgov,protocol,<html><u>EligibilityGender</u></html>,,ProtocolSection.EligibilityModule.Gender,eligibilities
+AACT foreign key to Study,nct_id,string,ctgov,protocol,<html><u>SecondaryIds</u></html>,,ProtocolSection.IdentificationModule.NCTId,id_information
+AACT foreign key to Study,nct_id,string,ctgov,protocol,<html><u>InterventionOtherName</u></html>,,ProtocolSection.IdentificationModule.NCTId,intervention_other_names
+AACT foreign key to Study,nct_id,string,ctgov,protocol,<html><u>IntDesign</u></html>,,ProtocolSection.IdentificationModule.NCTId,interventions
+AACT assigned foreig,intervention_id,integer,ctgov,protocol,<html><u>InterventionOtherName</u></html>,,n/a,intervention_other_names
+AACT assigned foreign key,facility_id,integer,ctgov,protocol,<html><u>Investigators</u></html>,,n/a,facility_investigators
+AACT assigned primary key,id,integer,ctgov,protocol,<html><u>SecondaryIds</u></html>,506342,n/a,id_information
+AACT assigned primary key,id,integer,ctgov,protocol,<html><u>InterventionOtherName</u></html>,326707,n/a,intervention_other_names
+AACT assigned primary key,id,integer,ctgov,protocol,<html><u>IntDesign</u></html>,643512,n/a,interventions
+"AACT assigned primary key.  Facility investigator information is available if the facility status (Facilities.Status) is ‘Recruiting’ or ‘Not yet recruiting’, and if the data provider has provided such information. Investigator information is removed from the publicly available content at ClinicalTrials.gov when the facility is no longer recruiting, or when the overall study status (Studies.Overall_status) changes to indicate that the study has completed recruitment.",id,integer,ctgov,protocol,<html><u>StudyOfficials</u></html>,224737,n/a,facility_investigators
+AACT assigned primary key,id,integer,ctgov,protocol,ConditionsLabel,1012626,n/a,keywords
+AACT assigned primary key,id,integer,ctgov,protocol,<html><u>Links</u></html>,56669,n/a,links
+AACT assigned primary key,id,integer,ctgov,protocol,<html><u>StudyOfficials</u></html>,374697,n/a,overall_officials
+AACT assigned primary key,id,integer,ctgov,protocol,RespParty,356790,n/a,responsible_parties
+,role,string,ctgov,protocol,<html><u>Investigators</u></html>,,<clinical_study>.<location>.<facility>.<investigator>.<role>,facility_investigators
+"<html><i>org_study_id</i><i>' if value from <org_study_id>
+</i><i>'secondary_id'</i><i> if value  from <secondary_id>
+</i><i>'nct_id'</i><i> if value  from <nct_id>
+</i><i>'nct_alias'</i><i> if value  from <nct_alias></i></html>",id_type,string,ctgov,protocol,<html><u>SecondaryIds</u></html>,,ProtocolSection.IdentificationModule.OrgStudyIdInfo.OrgStudyIdType or ProtocolSection.IdentificationModule.SecondaryIdInfoList.SecondaryIdType,id_information
+AACT foreign key to Study,nct_id,string,ctgov,protocol,<html><u>StudyOfficials</u></html>,,ProtocolSection.IdentificationModule.NCTId,facility_investigators
+AACT foreign key to Study,nct_id,string,ctgov,protocol,ConditionsLabel,,ProtocolSection.IdentificationModule.NCTId,keywords
+AACT foreign key to Study,nct_id,string,ctgov,protocol,<html><u>Links</u></html>,,ProtocolSection.IdentificationModule.NCTId,links
+AACT foreign key to Study,nct_id,string,ctgov,protocol,<html><u>StudyOfficials</u></html>,,ProtocolSection.IdentificationModule.NCTId,overall_officials
+AACT foreign key to Study,nct_id,string,ctgov,protocol,<html><u>RespParty</u></html>,,ProtocolSection.IdentificationModule.NCTId,responsible_parties
+"",phone,string,ctgov,protocol,<html><u>ContactPhone</u></html>,,ProtocolSection.ContactsLocationsModule.LocationList.Location.LocationContactList.LocationContact.LocationContactPhone or ProtocolSection.ContactsLocationsModule.LocationList.Location.LocationContactList.LocationContact.LocationContactPhoneExt,facility_contacts
+"",name,string,ctgov,protocol,<html><u>InterventionOtherName</u></html>,,ProtocolSection.ArmsInterventionsModule.InterventionList.Intervention.InterventionOtherNameList.InterventionOtherName,intervention_other_names
+"",description,text,ctgov,protocol,<html><u>InterventionDescription</u></html>,,ProtocolSection.ArmsInterventionsModule.InterventionList.Intervention.InterventionDescription,interventions
+"",name,string,ctgov,protocol,<html><u>InvestigatorRole</u></html>,,ProtocolSection.ContactsLocationsModule.LocationList.Location.LocationContactList.LocationContact.LocationContactName,facility_investigators
+"",name,string,ctgov,protocol,ConditionsLabel,,ProtocolSection.ConditionsModule.KeywordList.Keyword,keywords
+"",url,string,ctgov,protocol,<html><u>Links</u></html>,,ProtocolSection.ReferencesModule.SeeAlsoLinkList.SeeAlsoLink.SeeAlsoLinkURL,links
+"",description,text,ctgov,protocol,<html><u>Links</u></html>,,ProtocolSection.ReferencesModule.SeeAlsoLinkList.SeeAlsoLink.SeeAlsoLinkLabel,links
+"",name,string,ctgov,protocol,<html><u>StudyOfficials</u></html>,,ProtocolSection.ContactsLocationsModule.OverallOfficialList.OverallOfficial.OverallOfficialName,overall_officials
+"",affiliation,string,ctgov,protocol,<html><u>StudyOfficials</u></html>,,ProtocolSection.ContactsLocationsModule.OverallOfficialList.OverallOfficial.OverallOfficialAffiliation,overall_officials
+"",id_value,string,ctgov,protocol,<html><u>SecondaryIds</u></html>,,ProtocolSection.IdentificationModule.OrgStudyIdInfo.OrgStudyId or ProtocolSection.IdentificationModule.NCTIdAliasList.NCTIdAlias or ProtocolSection.IdentificationModule.SecondaryIdInfoList.SecondaryIdInfo.SecondaryId,id_information
+AACT foreign key to Study,nct_id,string,ctgov,protocol,<html><u>LeadSponsor</u></html>,,ProtocolSection.IdentificationModule.NCTId,sponsors
+AACT foreign key to Study,nct_id,string,ctgov,protocol,"",,ProtocolSection.IdentificationModule.NCTId,study_references
+AACT foreign key to Study,nct_id,string,ctgov,n/a,,,n/a,search_results
+AACT foreign key to Study,nct_id,string,ctgov,protocol,<html><u>Result_CertainAgreementLabel</u></html>,,ProtocolSection.IdentificationModule.NCTId,result_agreements
+short name of the study_search this object belongs to,name,string,ctgov,n/a,,,n/a,search_results
+category the object is grouped under,grouping,string,ctgov,n/a,,,n/a,search_results
+connects the object to the study_search that pulled it up,study_search_id,string,ctgov,n/a,,,n/a,search_results
+AACT foreign key to Study,nct_id,string,ctgov,n/a,,,n/a,study_searches
+indicates if a tsv should be made for the search_results,save_tsv,boolean,ctgov,n/a,,,n/a,study_searches
+<html>query used to search <u>ClinicalTrials.gov</u></html>,query,string,ctgov,n/a,,,n/a,study_searches
+This data element was introduced by ClinicalTrials.gov in August 2011 and is required if either Principal Investigator or Sponsor-Investigator is selected for the responsible_party_type.,title,string,ctgov,protocol,<html><u>RespParty</u></html>,,ProtocolSection.SponsorCollaboratorsModule.ResponsibleParty.ResponsiblePartyInvestigatorTitle,responsible_parties
+category the object is grouped under,grouping,string,ctgov,n/a,,,n/a,study_searches
+short name,name,string,ctgov,n/a,,,n/a,study_searches
+indicates if the search should be done using the ClinicalTrials.gov beta api or not,beta_api,string,ctgov,n/a,,,n/a,study_searches
+This data element was introduced in November 2007 and discontinued in August 2011. ,organization,string,ctgov,protocol,<html><u>RespParty</u></html>,,ProtocolSection.SponsorCollaboratorsModule.ResponsibleParty.ResponsiblePartyOldOrganization,responsible_parties
+AACT assigned primary key,id,integer,ctgov,n/a,,5496,n/a,search_results
+AACT assigned primary key,id,integer,ctgov,n/a,,1,n/a,study_searches
+AACT assigned primary key,id,integer,ctgov,protocol,<html><u>https://prsinfo.clinicaltrials.gov/definitions.html - LeadSponsor</u></html>,600257,n/a,sponsors
+AACT assigned primary key,id,integer,ctgov,protocol,,1145888,n/a,study_references
+AACT assigned primary key,id,integer,ctgov,results,<html><u>Result_CertainAgreementLabel</u></html>,48700,n/a,result_agreements
+NLM derived value that indicates the broad catergory of sponsor,agency_class,string,ctgov,protocol,<html><u>LeadSponsor</u></html>,,ProtocolSection.SponsorCollaboratorsModule.LeadSponsor.LeadSponsorClass,sponsors
+This data element was introduced by ClinicalTrials.gov in August 2011.,responsible_party_type,string,ctgov,protocol,<html><u>RespParty</u></html>,,ProtocolSection.SponsorCollaboratorsModule.ResponsibleParty.ResponsiblePartyType,responsible_parties
+"<html><i>reference'</i><i> if value from <results>
+</i><i>'results_reference'</i><i> if value from <results_reference></i></html>",reference_type,string,ctgov,protocol,<html><u>IsResultsRef</u></html>,,ProtocolSection.ReferencesModule.ReferenceList.Reference.ReferenceType,study_references
+"",name,string,ctgov,protocol,<html><u>RespParty</u></html>,,ProtocolSection.SponsorCollaboratorsModule.ResponsibleParty.ResponsiblePartyInvestigatorFullName,responsible_parties
+"",name,string,ctgov,protocol,<html><u>LeadSponsor</u></html>,,ProtocolSection.SponsorCollaboratorsModule.CollaboratorList.Collaborator.CollaboratorName,sponsors
+"",pmid,string,ctgov,protocol,<html><u>PubMedId</u></html>,,ProtocolSection.ReferencesModule.ReferenceList.Reference.ReferencePMID,study_references
+"",citation,text,ctgov,protocol,<html><u>Citation</u></html>,,ProtocolSection.ReferencesModule.ReferenceList.Reference.ReferenceCitation,study_references
+"<html><i>lead'</i><i> if value from <lead_sponsor>
+</i><i>'collaborator'</i><i> if value from <collaborator></i></html>",lead_or_collaborator,string,ctgov,protocol,<html><u>LeadSponsor</u></html>,,Derived from lead if value from lead_sponsor and collaborator if value from collaborator ,sponsors
+AACT foreign key to Study,nct_id,string,ctgov,protocol,<html><u>Result_PointOfContactLabel</u></html>,,ProtocolSection.IdentificationModule.NCTId,result_contacts
+AACT foreign key to Study,nct_id,string,ctgov,protocol,<html><u>PopFlowArmGroup</u></html>,,ProtocolSection.IdentificationModule.NCTId,result_groups
+AACT assigned foreign key,result_group_id,integer,ctgov,results,<html><u>BaselineData</u></html>,,n/a,baseline_measurements
+AACT assigned primary key,id,integer,ctgov,results,<html><u>Result_PointOfContactLabel</u></html>,48700,n/a,result_contacts
+"This table is an aggregate colleciton of group info gathered from baseline_measures, reported_events, outcomes, milestones, and drop_withdrawals",id,integer,ctgov,results,<html><u>PopFlowArmGroup</u></html>,1262140,n/a,result_groups
+AACT foreign key to Study,nct_id,string,ctgov,protocol,"",,ProtocolSection.IdentificationModule.NCTId,pending_results
+AACT foreign key to Study,nct_id,string,ctgov,protocol,<html><u>BaselineData</u></html>,,ProtocolSection.IdentificationModule.NCTId,baseline_measurements
+"The value might be 'Unknown', so a date description (string-type) column is provided to capture this.",event_date_description,string,ctgov,annotation,"",,AnnotationSection.AnnotationModule.UnpostedAnnotation.UnpostedEventList.UnpostedEvent.UnpostedEventDate,pending_results
+AACT assigned primary key,id,integer,ctgov,results,,17914,n/a,pending_results
+AACT assigned primary key,id,integer,ctgov,results,BaselineUnitOfMeasure,1447638,n/a,baseline_measurements
+AACT assigned foreign key,outcome_id,integer,ctgov,results,<html><u>Result_Outcome_MeasureLabel</u></html>,,n/a,outcome_measurements
+"",ctgov_group_code,string,ctgov,results,<html><u>PopFlowArmGroup</u></html>,,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeGroupList.OutcomeGroup.OutcomeGroupId or ResultsSection.BaselineCharacteristicsModule.BaselineGroupList.BaselineGroup.BaselineGroupId or ResultsSection.ParticipantFlowModule.FlowGroupList.FlowGroup.FlowGroupId,result_groups
+"",title,string,ctgov,results,<html><u>PopFlowArmGroup</u></html>,,ResultsSection.ParticipantFlowModule.FlowGroupList.FlowGroup.FlowGroupTitle or ResultsSection.BaselineCharacteristicsModule.BaselineGroupList.BaselineGroup.BaselineGroupTitle or ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeGroupList.OutcomeGroup.OutcomeGroupTitle,result_groups
+"",organization,string,ctgov,results,<html><u>Result_PointOfContact_orgName</u></html>,,ResultsSection.MoreInfoModule.PointOfContact.PointOfContactOrganization,result_contacts
+"<html>Derived from XML tag: <i>'Baseline</i>', <i>'Outcome',</i> '<i>Reported Event</i>', or '<i>Participant Flow</i>' </html>",result_type,string,ctgov,results,<html><u>PopFlowArmGroup</u></html>,, ,result_groups
+Convert the value to a date-type.,event_date,date,ctgov,annotation,"",,AnnotationSection.AnnotationModule.UnpostedAnnotation.UnpostedEventList.UnpostedEvent.UnpostedEventDate,pending_results
+value provided as string,param_value,string,ctgov,results,<html><u>BaselineData</u></html>,,ResultsSection.BaselineCharacteristicsModule.BaselineMeasureList.BaselineMeasure.BaselineClassList.BaselineClass.BaselineCategoryList.BaselineCategory.BaselineMeasurementList.BaselineMeasurement.BaselineMeasurementValue,baseline_measurements
+"",name,string,ctgov,results,<html><u>Result_PointOfContact_orgName</u></html>,,ResultsSection.MoreInfoModule.PointOfContact.PointOfContactTitle,result_contacts
+"",phone,string,ctgov,results,<html><u>Result_PointOfContact_phoneNumber</u></html>,,ResultsSection.MoreInfoModule.PointOfContact.PointOfContactPhone,result_contacts
+"",email,string,ctgov,results,<html><u>Result_PointOfContact_email</u></html>,,ResultsSection.MoreInfoModule.PointOfContact.PointOfContactEMail,result_contacts
+"",ctgov_group_code,string,ctgov,results,<html><u>BaselineData</u></html>,,ResultsSection.BaselineCharacteristicsModule.BaselineMeasureList.BaselineMeasure.BaselineClassList.BaselineClass.BaselineCategoryList.BaselineCategory.BaselineMeasurementList.BaselineMeasurement.BaselineMeasurementGroupId,baseline_measurements
+"",classification,string,ctgov,results,<html><u>Classification</u></html>,,ResultsSection.BaselineCharacteristicsModule.BaselineMeasureList.BaselineMeasure.BaselineClassList.BaselineClass.BaselineClassTitle,baseline_measurements
+"",units,string,ctgov,results,<html><u>BaselineUnitOfMeasure</u></html>,,ResultsSection.BaselineCharacteristicsModule.BaselineMeasureList.BaselineMeasure.BaselineMeasureUnitOfMeasure,baseline_measurements
+"",title,text,ctgov,results,<html><u>Result_Baseline_Measure_title</u></html>,,ResultsSection.BaselineCharacteristicsModule.BaselineMeasureList.BaselineMeasure.BaselineMeasureTitle,baseline_measurements
+"",description,string,ctgov,results,Result_Baseline_Measure_title,,ResultsSection.BaselineCharacteristicsModule.BaselineMeasureList.BaselineMeasure.BaselineMeasureDescription,baseline_measurements
+"",description,text,ctgov,results,<html><u>PopFlowArmGroup</u></html>,,ResultsSection.ParticipantFlowModule.FlowGroupList.FlowGroup.FlowGroupDescription or ResultsSection.BaselineCharacteristicsModule.BaselineGroupList.BaselineGroup.BaselineGroupDescription or ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeGroupList.OutcomeGroup.OutcomeGroupDescription,result_groups
+"If the user answers “N” to the question about Results Disclosure Restriction on PI(s), or negatively whether all PI(s) are employees of the sponsor, the field contains the statement, ""There is NOT an agreement between the sponsor (or its agents) that restricts the PI's rights to discuss or publish trial results after the trial is completed.""",agreement,text,ctgov,results,<html><u>Result_CertainAgreementLabel</u></html>,,ResultsSection.MoreInfoModule.CertainAgreement.AgreementOtherDetails,result_agreements
+AACT assigned foreign key,result_group_id,integer,ctgov,results,<html><u>Result_Baseline_ArmGroup_numUnitsAnalyzed</u></html>,,n/a,baseline_counts
+AACT foreign key to Study,nct_id,string,ctgov,protocol,<html><u>Result_Baseline_ArmGroup_numUnitsAnalyzed</u></html>,,ProtocolSection.IdentificationModule.NCTId,baseline_counts
+AACT assigned primary key,id,integer,ctgov,results,<html><u>Result_Baseline_ArmGroup_numUnitsAnalyzed</u></html>,139556,n/a,baseline_counts
+AACT assigned foreign key,result_group_id,integer,ctgov,results,<html><u>Result_AdverseEventsImgResult_AdverseEvents_ArmGroup</u></html>,,n/a,reported_events
+AACT foreign key to Study,nct_id,string,ctgov,protocol,<html><u>Result_AdverseEventsLabel</u></html>,,ProtocolSection.IdentificationModule.NCTId,reported_events
+,default_vocab,string,ctgov,results,<html><u>ReportedEventsSourceVocab</u></html>,,<clinical_results>.<reported_events>.(<serious_events> or <other_events>).<default_vocab>,reported_events
+AACT assigned primary key,id,integer,ctgov,results,<html><u>Result_AdverseEventsLabel</u></html>,6481059,n/a,reported_events
+"<html><i>serious'</i><i> if data from <serious_events>
+</i><i>'other'</i><i> if data from <other_events></i></html>",event_type,string,ctgov,results,<html><u>Result_Outcome_MeasureImg</u></html>,,Derived from serious if data from serious_events or other if data from other_events,reported_events
+,default_assessment,string,ctgov,results,<html><u>ReportedEventsAssessmentType</u></html>,,<clinical_results>.<reported_events>.(<serious_events> or <other_events>).<default_assessment>,reported_events
+"",population,text,ctgov,results,<html><u>AnalysisPopulation</u></html>,,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeMeasurePopulationDescription,outcomes
+value provided as decimal,param_value_num,decimal,ctgov,results,<html><u>BaselineData</u></html>,,ResultsSection.BaselineCharacteristicsModule.BaselineMeasureList.BaselineMeasure.BaselineClassList.BaselineClass.BaselineCategoryList.BaselineCategory.BaselineMeasurementList.BaselineMeasurement.BaselineMeasurementValue,baseline_measurements
+value provided as string,dispersion_value,string,ctgov,results,<html><u>BaselineDispersValue</u></html>,,ResultsSection.BaselineCharacteristicsModule.BaselineMeasureList.BaselineMeasure.BaselineClassList.BaselineClass.BaselineCategoryList.BaselineCategory.BaselineMeasurementList.BaselineMeasurement.BaselineMeasurementSpread,baseline_measurements
+value provided as decimal,dispersion_value_num,decimal,ctgov,results,<html><u>BaselineDispersValue</u></html>,,ResultsSection.BaselineCharacteristicsModule.BaselineMeasureList.BaselineMeasure.BaselineClassList.BaselineClass.BaselineCategoryList.BaselineCategory.BaselineMeasurementList.BaselineMeasurement.BaselineMeasurementSpread,baseline_measurements
+Used for reporting the lower limit of the interquartile range or full range.,dispersion_lower_limit,decimal,ctgov,results,<html><u>BaselineDispersValue</u></html>,,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeClassList.OutcomeClass.OutcomeCategoryList.OutcomeCategory.OutcomeMeasurementList.OutcomeMeasurement.OutcomeMeasurementLowerLimit,baseline_measurements
+Used for reporting the upper limit of the interquartile range or full range.,dispersion_upper_limit,decimal,ctgov,results,<html><u>BaselineDispersValue</u></html>,,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeClassList.OutcomeClass.OutcomeCategoryList.OutcomeCategory.OutcomeMeasurementList.OutcomeMeasurement.OutcomeMeasurementUpperLimit,baseline_measurements
+"",subjects_affected,integer,ctgov,results,<html><u>SeriousTotalAffected</u></html>,,ResultsSection.AdverseEventsModule.SeriousEventList.SeriousEvent.SeriousEventStatsList.SeriousEventStats.SeriousEventStatsNumAffected or ResultsSection.AdverseEventsModule.OtherEventList.OtherEvent.OtherEventStatsList.OtherEventStats.OtherEventStatsNumAffected,reported_events
+"",description,text,ctgov,results,<html><u>ReportedEventsNotes</u></html>,,ResultsSection.AdverseEventsModule.EventsDescription,reported_events
+"",event_count,integer,ctgov,results,<html><u>AdverseEventsDefinition</u></html>,,ResultsSection.AdverseEventsModule.SeriousEventList.SeriousEvent.SeriousEventStatsList.SeriousEventStats.SeriousEventStatsNumEvents or ResultsSection.AdverseEventsModule.OtherEventList.OtherEvent.OtherEventStatsList.OtherEventStats.OtherEventStatsNumEvents,reported_events
+"",dispersion_type,string,ctgov,results,<html><u>BaselineDispersType</u></html>,,ResultsSection.BaselineCharacteristicsModule.BaselineMeasureList.BaselineMeasure.BaselineMeasureDispersionType,baseline_measurements
+"",explanation_of_na,string,ctgov,results,<html><u>BaselineNaComment</u></html>,,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeClassList.OutcomeClass.OutcomeCategoryList.OutcomeCategory.OutcomeMeasurementList.OutcomeMeasurement.OutcomeMeasurementComment,baseline_measurements
+"",ctgov_group_code,string,ctgov,results,<html><u>Result_Baseline_ArmGroup_numUnitsAnalyzed</u></html>,,ResultsSection.BaselineCharacteristicsModule.BaselineDenomList.BaselineDenom.BaselineDenomCountList.BaselineDenomCount.BaselineDenomCountGroupId,baseline_counts
+"",count,integer,ctgov,results,<html><u>Result_Baseline_ArmGroup_numUnitsAnalyzed</u></html>,,ResultsSection.BaselineCharacteristicsModule.BaselineDenomList.BaselineDenom.BaselineDenomCountList.BaselineDenomCount.BaselineDenomCountValue,baseline_counts
+"",time_frame,text,ctgov,results,<html><u>ReportedEventsTimeFrame</u></html>,,ResultsSection.AdverseEventsModule.EventsTimeFrame,reported_events
+"",scope,string,ctgov,results,<html><u>Result_Baseline_ArmGroup_numUnitsAnalyzed</u></html>,,Used by AACT not from clinicaltrials.gov,baseline_counts
+AACT foreign key to Study,nct_id,string,ctgov,protocol,<html><u>Result_Outcome_MeasureImg</u></html>,,ProtocolSection.IdentificationModule.NCTId,outcomes
+"A study may have records in the Outcomes table but no corresponding records in either the Outcome_Measures or Otucome_Counts table.  These may be studies that have indicated which outcome measures they will provide results for, but have not yet posted the final results for these measures.  For these studies and outcome measures the value of anticipated_posting_date indicates the anticipated date when results will be provided.",anticipated_posting_month_year,string,ctgov,results,<html><u>OutcomeAnticipatedPostDate</u></html>,,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeMeasureAnticipatedPostingDate,outcomes
+"",organ_system,string,ctgov,results,<html><u>OrganSystem</u></html>,,ResultsSection.AdverseEventsModule.SeriousEventList.SeriousEvent.SeriousEventOrganSystem or ResultsSection.AdverseEventsModule.OtherEventList.OtherEvent.OtherEventOrganSystem,reported_events
+"",adverse_event_term,string,ctgov,results,<html><u>AdverseEventTerm</u></html>,,ResultsSection.AdverseEventsModule.SeriousEventList.SeriousEvent.SeriousEventTerm or ResultsSection.AdverseEventsModule.OtherEventList.OtherEvent.OtherEventTerm,reported_events
+"",frequency_threshold,integer,ctgov,results,<html><u>FrequencyThreshold</u></html>,, ResultsSection.AdverseEventsModule.EventsFrequencyThreshold,reported_events
+"",vocab,string,ctgov,results,<html><u>AdverseEventVocab</u></html>,,ResultsSection.AdverseEventsModule.SeriousEventList.SeriousEvent.SeriousEventSourceVocabulary or ResultsSection.AdverseEventsModule.OtherEventList.OtherEvent.OtherEventSourceVocabulary,reported_events
+"",outcome_type,string,ctgov,results,<html><u>OutcomeMeasureType</u></html>,,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeMeasureType,outcomes
+"",title,text,ctgov,results,<html><u>OutcomeMeasureTitle</u></html>,,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeMeasureTitle,outcomes
+"",description,text,ctgov,results,<html><u>OutcomeMeasureDesc</u></html>,,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeMeasureDescription,outcomes
+"",time_frame,text,ctgov,results,<html><u>OutcomeMeasureTimeFrame</u></html>,,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeMeasureTimeFrame,outcomes
+"",assessment,string,ctgov,results,<html><u>AssessType</u></html>,,ResultsSection.AdverseEventsModule.SeriousEventList.SeriousEvent.SeriousEventAssessmentType or ResultsSection.AdverseEventsModule.OtherEventList.OtherEvent.OtherEventAssessmentType,reported_events
+AACT assigned primary key,id,integer,ctgov,results,<html><u>Result_Outcome_MeasureImg</u></html>,379655,n/a,outcomes
+,units,string,ctgov,results,<html><u>OutcomeMeasureDesc</u></html>,,<clinical_results>.<outcome_list>.<outcome>.<measure>.<units>,outcomes
+AACT assigned foreign key,outcome_analysis_id,integer,ctgov,results,<html><u>GroupSelection</u></html>,,n/a,outcome_analysis_groups
+AACT assigned foreign key,result_group_id,integer,ctgov,results,<html><u>GroupSelection</u></html>,,n/a,outcome_analysis_groups
+AACT assigned foreign key,outcome_id,integer,ctgov,results,<html><u>Result_Outcome_Analysis</u></html>,,n/a,outcome_analyses
+AACT foreign key to Study,nct_id,string,ctgov,protocol,<html><u>GroupSelection</u></html>,,ProtocolSection.IdentificationModule.NCTId,outcome_analysis_groups
+AACT foreign key to Study,nct_id,string,ctgov,protocol,<html><u>Result_Outcome_Analysis</u></html>,,ProtocolSection.IdentificationModule.NCTId,outcome_analyses
+Just the numeric part of the value provided - to 6-decimal place precision ,p_value,float 7:6,ctgov,results,<html><u>Result_Outcome_Analysis_pValue</u></html>,,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeAnalysisList.OutcomeAnalysis.OutcomeAnalysisPValue,outcome_analyses
+AACT assigned primary key,id,integer,ctgov,results,<html><u>GroupSelection</u></html>,399943,n/a,outcome_analysis_groups
+AACT assigned primary key,id,integer,ctgov,results,<html><u>Result_Outcome_Analysis</u></html>,206592,n/a,outcome_analyses
+"",dispersion_type,string,ctgov,results,<html><u>EstDispersType</u></html>,,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeAnalysisList.OutcomeAnalysis.OutcomeAnalysisDispersionType,outcome_analyses
+The p-value modifier: typically a less than or greater than sign,p_value_modifier,float 7:6,ctgov,results,<html><u>Result_Outcome_Analysis_pValue</u></html>,,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeAnalysisList.OutcomeAnalysis.OutcomeAnalysisPValue,outcome_analyses
+"",units_analyze,string,ctgov,results,<html><u>TypeUnitsAnalyzed</u></html>,,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeMeasureTypeUnitsAnalyzed,outcomes
+"",dispersion_type,string,ctgov,results,<html><u>OutcomeMeasureDispersType</u></html>,,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeMeasureDispersionType,outcomes
+"",param_type,string,ctgov,results,<html><u>OutcomeMeasureParamType</u></html>,,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeMeasureParamType,outcomes
+"",ctgov_group_code,string,ctgov,results,<html><u>GroupSelection</u></html>,,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeAnalysisList.OutcomeAnalysis.OutcomeAnalysisGroupIdList.OutcomeAnalysisGroupId,outcome_analysis_groups
+"",param_type,string,ctgov,results,<html><u>EstDispersion</u></html>,,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeAnalysisList.OutcomeAnalysis.OutcomeAnalysisParamType,outcome_analyses
+"",param_value,decimal,ctgov,results,<html><u>Result_Outcome_Analysis_estimValue</u></html>,,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeAnalysisList.OutcomeAnalysis.OutcomeAnalysisParamValue,outcome_analyses
+"",dispersion_value,decimal,ctgov,results,<html><u>EstDispersAmount</u></html>,,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeAnalysisList.OutcomeAnalysis.OutcomeAnalysisDispersionValue,outcome_analyses
+"",ci_percent,decimal,ctgov,results,<html><u>ConfInterval</u></html>,,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeAnalysisList.OutcomeAnalysis.OutcomeAnalysisCIPctValue,outcome_analyses
+"",ci_upper_limit,decimal,ctgov,results,<html><u>Result_Outcome_Analysis_ciUpperLimit</u></html>,,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeAnalysisList.OutcomeAnalysis.OutcomeAnalysisCIUpperLimit,outcome_analyses
+"",ci_upper_limit_na_comment,string,ctgov,results,<html><u>Result_Outcome_Analysis_ciUpperLimitNaComment</u></html>,,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeAnalysisList.OutcomeAnalysis.OutcomeAnalysisCIUpperLimitComment,outcome_analyses
+"",p_value_description,string,ctgov,results,<html><u>PValueComments</u></html>,,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeAnalysisList.OutcomeAnalysis.OutcomeAnalysisPValueComment,outcome_analyses
+"",method,string,ctgov,results,<html><u>Method</u></html>,,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeAnalysisList.OutcomeAnalysis.OutcomeAnalysisStatisticalMethod,outcome_analyses
+"",method_description,text,ctgov,results,<html><u>OtherMethodComments</u></html>,,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeAnalysisList.OutcomeAnalysis.OutcomeAnalysisStatisticalComment,outcome_analyses
+"",other_analysis_description,text,ctgov,results,"",,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeAnalysisList.OutcomeAnalysis.OutcomeAnalysisOtherAnalysisDescription,outcome_analyses
+"",ci_n_sides,string,ctgov,results,<html><u>CINumberSides</u></html>,,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeAnalysisList.OutcomeAnalysis.OutcomeAnalysisCINumSides,outcome_analyses
+AACT foreign key to Study,nct_id,string,ctgov,protocol,<html><u>Result_Outcome_MeasureLabel</u></html>,,ProtocolSection.IdentificationModule.NCTId,outcome_measurements
+AACT foreign key to Study,nct_id,string,ctgov,protocol,<html><u>OutcomeData</u></html>,,ProtocolSection.IdentificationModule.NCTId,outcome_counts
+AACT assigned foreign key,result_group_id,integer,ctgov,results,<html><u>Result_Outcome_Measure_ArmGroup</u></html>,,n/a,outcome_measurements
+AACT assigned foreign key,outcome_id,integer,ctgov,results,<html><u>OutcomeData</u></html>,,aact assigned foreign key,outcome_counts
+AACT assigned foreign key,result_group_id,integer,ctgov,results,<html><u>OutcomeData</u></html>,,n/a,outcome_counts
+AACT assigned primary key,id,integer,ctgov,results,<html><u>Result_Outcome_MeasureLabel</u></html>,2907984,n/a,outcome_measurements
+AACT assigned primary key,id,integer,ctgov,results,<html><u>OutcomeData</u></html>,907566,n/a,outcome_counts
+"",ctgov_group_code,string,ctgov,results,<html><u>OutcomeData</u></html>,,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeDenomList.OutcomeDenom.OutcomeDenomCountList.OutcomeDenomCount.OutcomeDenomCountGroupId,outcome_counts
+"A concise name for the specific measure that will be used to determine the effect of the intervention(s) or, for observational studies. ",title,string,ctgov,results,<html><u>Result_Outcome_Measure_title</u></html>,,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeMeasureTitle,outcome_measurements
+Created as a varchar dataype in order to store possible non-numeric values.,param_value_num,decimal,ctgov,results,<html><u>Result_Outcome_MeasureLabel</u></html>,,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeClassList.OutcomeClass.OutcomeCategoryList.OutcomeCategory.OutcomeMeasurementList.OutcomeMeasurement.OutcomeMeasurementValue,outcome_measurements
+Required if the outcome measure is continuous (e.g. blood pressure),param_value,string,ctgov,results,<html><u>Result_Outcome_MeasureLabel</u></html>,,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeClassList.OutcomeClass.OutcomeCategoryList.OutcomeCategory.OutcomeMeasurementList.OutcomeMeasurement.OutcomeMeasurementValue,outcome_measurements
+Used for reporting the upper limit of the interquartile range or full range.,dispersion_upper_limit,decimal,ctgov,results,<html><u>UpperLimit</u></html>,,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeClassList.OutcomeClass.OutcomeCategoryList.OutcomeCategory.OutcomeMeasurementList.OutcomeMeasurement.OutcomeMeasurementUpperLimit,outcome_measurements
+Used for reporting the lower limit of the interquartile range or full range.,dispersion_lower_limit,decimal,ctgov,results,<html><u>LowerLimit</u></html>,,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeClassList.OutcomeClass.OutcomeCategoryList.OutcomeCategory.OutcomeMeasurementList.OutcomeMeasurement.OutcomeMeasurementLowerLimit,outcome_measurements
+"",explanation_of_na,text,ctgov,results,<html><u>Result_Outcome_Measure_Data_naComment</u></html>,,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeClassList.OutcomeClass.OutcomeCategoryList.OutcomeCategory.OutcomeMeasurementList.OutcomeMeasurement.OutcomeMeasurementComment,outcome_measurements
+"",dispersion_value_num,decimal,ctgov,results,<html><u>Result_Outcome_Analysis_dispersionValue</u></html>,,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeClassList.OutcomeClass.OutcomeCategoryList.OutcomeCategory.OutcomeMeasurementList.OutcomeMeasurement.OutcomeMeasurementComment,outcome_measurements
+"",dispersion_type,string,ctgov,results,<html><u>Result_Outcome_Measure_dispersionType</u></html>,,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeMeasureDispersionType,outcome_measurements
+ ,dispersion_value,string,ctgov,results,<html><u>Result_Outcome_Analysis_dispersionValue</u></html>,,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeClassList.OutcomeClass.OutcomeCategoryList.OutcomeCategory.OutcomeMeasurementList.OutcomeMeasurement.OutcomeMeasurementSpread,outcome_measurements
+"",units,string,ctgov,results,??,,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeMeasureUnitOfMeasure,outcome_measurements
+"",description,text,ctgov,results,<html><u>Result_Outcome_Measure_description</u></html>,,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeMeasureDescription,outcome_measurements
+"",groups_description,text,ctgov,results,"",,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeAnalysisList.OutcomeAnalysis.OutcomeAnalysisGroupDescription,outcome_analyses
+"",ctgov_group_code,string,ctgov,results,<html><u>Result_Outcome_Measure_ArmGroup</u></html>,,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeClassList.OutcomeClass.OutcomeCategoryList.OutcomeCategory.OutcomeMeasurementList.OutcomeMeasurement.OutcomeMeasurementGroupId,outcome_measurements
+"",classification,string,ctgov,results, ,,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeClassList.OutcomeClass.OutcomeClassTitle,outcome_measurements
+"",category,string,ctgov,results,<html><u>OutcomeCategoryTitle</u></html>,,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeClassList.OutcomeClass.OutcomeCategoryList.OutcomeCategory.OutcomeCategoryTitle,outcome_measurements
+"",scope,string,ctgov,results,<html><u>OutcomeData</u></html>,,Used by AACT not from clinicaltrials.gov,outcome_counts
+AACT assigned foreign key,result_group_id,integer,ctgov,results,<html><u>PopFlowArmGroup</u></html>,,n/a,milestones
+AACT foreign key to Study,nct_id,string,ctgov,protocol,<html><u>Result_ParticipantFlowLabel</u></html>,,ProtocolSection.IdentificationModule.NCTId,participant_flows
+AACT foreign key to Study,nct_id,string,ctgov,protocol,<html><u>MilestoneName</u></html>,,ProtocolSection.IdentificationModule.NCTId,milestones
+AACT assigned foreign key,result_group_id,integer,ctgov,results,<html><u>PopFlowArmGroup</u></html>,,n/a,drop_withdrawals
+AACT foreign key to Study,nct_id,string,ctgov,protocol,<html><u>NotCompleted</u></html>,,ProtocolSection.IdentificationModule.NCTId,drop_withdrawals
+MeSH or free text term that was reviewed by a clinician and determined to be related to the field of nephrology,term,string,proj_tag_nephrology,projects,,,n/a,tagged_terms
+Indicates if the term is MeSH ('mesh') or Free Text ('free text'),term_type,string,proj_tag_nephrology,projects,,,n/a,tagged_terms
+Unique identifier of the study that was analyzed,nct_id,string,proj_tag_nephrology,projects,,,n/a,analyzed_studies
+Brief title of the study that was analyzed,brief_title,string,proj_tag_nephrology,projects,,,n/a,analyzed_studies
+Lead sponsor of the study that was analyzed,lead_sponsor,string,proj_tag_nephrology,projects,,,n/a,analyzed_studies
+"Preferred name of an organization as determined by CDEK
+",name,string,proj_cdek_standard_orgs,projects,,,n/a,cdek_organizations
+"To facilitate querying, the lowercase version of the preferred organization name
+",downcase_name,string,proj_cdek_standard_orgs,projects,,,n/a,cdek_organizations
+AACT assigned primary key,id,integer,ctgov,results,<html><u>Result_ParticipantFlowLabel</u></html>,48700,n/a,participant_flows
+AACT assigned primary key,id,integer,ctgov,results,<html><u>MilestoneName</u></html>,511104,n/a,milestones
+AACT assigned primary key,id,integer,ctgov,results,<html><u>NotCompleted</u></html>,357711,n/a,drop_withdrawals
+"Primary Key
+",id,integer,proj_tag_nephrology,projects,,115,n/a,tagged_terms
+"Primary Key
+",id,integer,proj_tag_nephrology,projects,,13327,n/a,analyzed_studies
+"Primary Key (All of the information in the CDEK_Organization table is in the CDEK_Synonyms table.  This table basically provides a list of the distinct preferred organization names.)
+",id,integer,proj_cdek_standard_orgs,projects,,24749,n/a,cdek_organizations
+"Primary Key
+",id,integer,proj_cdek_standard_orgs,projects,,25678,n/a,cdek_synonyms
+"",reason,string,ctgov,results,<html><u>DWReason</u></html>,,ResultsSection.ParticipantFlowModule.FlowPeriodList.FlowPeriod.FlowDropWithdrawList.FlowDropWithdraw.FlowDropWithdrawType,drop_withdrawals
+"",period,string,ctgov,results,<html><u>Period</u></html>,,ResultsSection.PartcipantFlowModule.FlowPeriodList.FlowPeriod.FlowPeriodTitle,drop_withdrawals
+"",count,integer,ctgov,results,<html><u>NotCompleted</u></html>,,ResultsSection.BaselineCharacteristicsModule.BaselineDenomList.BaselineDenom.BaselineDenomCountList.BaselineDenomCount.BaselineDenomCountValue,drop_withdrawals
+"",ctgov_group_code,string,ctgov,results,<html><u>PopFlowArmGroup</u></html>,,ResultsSection.ParticipantFlowModule.FlowPeriodList.FlowPeriod.FlowDropWithdrawList.FlowDropWithdraw.FlowReasonList.FlowReason.FlowReasonGroupId,drop_withdrawals
+"",count,integer,ctgov,results,<html><u>MilestoneData</u></html>,,ResultsSection.ParticipantFlowModule.FlowPeriodList.FlowPeriod.FlowMilestoneList.FlowMilestone.FlowAchievementList.FlowAchievement.FlowAchievementNumSubjects,milestones
+"",description,text,ctgov,results,<html><u>Result_ParticipantFlow_Milestone_Started_comment</u></html>,,ResultsSection.ParticipantFlowModule.FlowPeriodList.FlowPeriod.FlowMilestoneList.FlowMilestone.FlowAchievementList.FlowAchievement.FlowAchievementComment,milestones
+"",title,string,ctgov,results,<html><u>MilestoneName</u></html>,,ResultsSection.ParticipantFlowModule.FlowPeriodList.FlowPeriod.FlowMilestoneList.FlowMilestone.FlowMilestoneType,milestones
+"",period,string,ctgov,results,<html><u>Period</u></html>,,ResultsSection.ParticipantFlowModule.FlowPeriodList.FlowPeriod.FlowPeriodTitle,milestones
+"",ctgov_group_code,string,ctgov,results,<html><u>PopFlowArmGroup</u></html>,,ResultsSection.ParticipantFlowModule.FlowPeriodList.FlowPeriod.FlowMilestoneList.FlowMilestone.FlowAchievementList.FlowAchievement.FlowAchievementGroupId,milestones
+"",recruitment_details,string,ctgov,results,<html><u>RecruitDetails</u></html>,,ResultsSection.ParticipantFlowModule.FlowRecruitmentDetails,participant_flows
+"",pre_assignment_details,string,ctgov,results,<html><u>PreAssignDetails</u></html>,,ResultsSection.ParticipantFlowModule.FlowPreAssignmentDetails,participant_flows
+"",count,integer,ctgov,results,<html><u>OutcomeData</u></html>,,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeDenomList.OutcomeDenom.OutcomeDenomCountList.OutcomeDenomCount.OutcomeDenomCountValue,outcome_counts
+"",units,string,ctgov,results,<html><u>OutcomeUnitOfMeasure</u></html>,,ResultsSection.OutcomeMeasuresModule.OutcomeMeasureList.OutcomeMeasure.OutcomeMeasureUnitOfMeasure,outcome_counts
+A commonly used name for an organization - not necessarily the preferred name.  This name has been used to identify an organization related to a study in ClinicalTrials.gov,name,string,proj_cdek_standard_orgs,projects,,,n/a,cdek_synonyms
+"Preferred name of an organization as determined by CDEK
+",preferred_name,string,proj_cdek_standard_orgs,projects,,,n/a,cdek_synonyms
+"To facilitate querying, the lowercase version of the organization name
+",downcase_name,string,proj_cdek_standard_orgs,projects,,,n/a,cdek_synonyms
+"To facilitate querying, the lowercase version of the preferred organization name
+",downcase_preferred_name,string,proj_cdek_standard_orgs,projects,,,n/a,cdek_synonyms
+Oversight Authorities,oversight,string,proj_results_reporting,projects,"",,n/a,analyzed_studies
+Study Identifier,nct_id,string,proj_results_reporting,projects,,,basic study information,analyzed_studies
+URL for study at ClinicalTrials.gov,url,string,proj_results_reporting,projects,,,basic study information,analyzed_studies
+Brief Title,brief_title,string,proj_results_reporting,projects,,,basic study information,analyzed_studies
+Start Month,start_month,string,proj_results_reporting,projects,,,basic study information,analyzed_studies
+Start Year,start_year,string,proj_results_reporting,projects,,,basic study information,analyzed_studies
+Overall Status,overall_statusc,string,proj_results_reporting,projects,,,basic study information,analyzed_studies
+Primary Completion Month,p_completion_month,string,proj_results_reporting,projects,,,basic study information,analyzed_studies
+Primary Completion Year,p_completion_year,string,proj_results_reporting,projects,,,basic study information,analyzed_studies
+Completion Month,completion_month,string,proj_results_reporting,projects,,,basic study information,analyzed_studies
+Completion Year,completion_year,string,proj_results_reporting,projects,,,basic study information,analyzed_studies
+Verification month,verification_month,string,proj_results_reporting,projects,,,basic study information,analyzed_studies
+Verification year,verification_year,string,proj_results_reporting,projects,,,basic study information,analyzed_studies
+"Primary completion month (imputed) If p_completion_month is missing then this is imputed with completion_month (if not missing), or with verification_month.",p_comp_mn,string,proj_results_reporting,projects,,,basic study information,analyzed_studies
+"Primary completion year (imputed) If p_completion_year is missing then this is imputed with completion_year (if not missing), or with verification_year.",p_comp_yr,string,proj_results_reporting,projects,,,basic study information,analyzed_studies
+Year Registered at ClinicalTrials.gov,received_year,string,proj_results_reporting,projects,,,basic study information,analyzed_studies
+Months to Primary Completion  Months from study start to primary completion. Uses imputed values if p_completion_month and p_completion_year are missing.,mntopcom,string,proj_results_reporting,projects,,,basic study information,analyzed_studies
+Enrollment.  According to the planned/actual enrollment information provided in the protocol section of the study record.,enrollment,string,proj_results_reporting,projects,,,study design characteristics,analyzed_studies
+Number of Arms,number_of_arms,string,proj_results_reporting,projects,,,study design characteristics,analyzed_studies
+"Allocation.  If allocation is missing and study is identified as a single group study with one arm, then a value of 'Non-Randomized' is imputed.",allocation,string,proj_results_reporting,projects,,,study design characteristics,analyzed_studies
+"Masking.  If masking is missing and study is identified as a single group study with one arm, then a value of 'Open' is imputed.",masking,string,proj_results_reporting,projects,,,study design characteristics,analyzed_studies
+Phase,phasec,string,proj_results_reporting,projects,,,study design characteristics,analyzed_studies
+Primary Purpose,primary_purpose,,proj_results_reporting,projects,,,study design characteristics,analyzed_studies
+Name of Sponsor (Primary Organization that Oversees Study),sponsor_name,,proj_results_reporting,projects,,,sponsors and funding,analyzed_studies
+"Lead Sponsor Classification.  Sponsors are classified as Industry, NIH, U.S. Fed., or Other by ClinicalTrials.gov.",agency_classc,string,proj_results_reporting,projects,,,sponsors and funding,analyzed_studies
+Concatenated String of Collaborator Names,collaborator_names,string,proj_results_reporting,projects,,,sponsors and funding,analyzed_studies
+"Funding Source.  Derived from Sponsor and Collaborator information. If Sponsor is from NIH, or at least one collaborator is from NIH with no Industry sponsor then funding=NIH. Otherwise if Sponsor is from Industry or at least one collaborator is from Industry then funding=Industry. Studies with no Industry or NIH Sponsor or collaborators are assigned funding=Other.  ",funding,string,proj_results_reporting,projects,,,sponsors and funding,analyzed_studies
+Type of Responsible Party,responsible_party_type,string,proj_results_reporting,projects,,,sponsors and funding,analyzed_studies
+Organization or Affiliation of Responsible Party (if not Sponsor)  Combines information about the responsible party organization and the affiliation of the Principal Investigator or the Sponsor-Investigator.,responsible_party_organization,string,proj_results_reporting,projects,,,sponsors and funding,analyzed_studies
+Behavioral Intervention.  Study lists at least one behavioral intervention type,behavioral,string,proj_results_reporting,projects,"",,n/a,analyzed_studies
+Results reported for at least one primary outcome,results,string,proj_results_reporting,projects,,,results reporting information,analyzed_studies
+Month Results First Received by ClinicalTrials.gov,resultsreceived_month,string,proj_results_reporting,projects,,,results reporting information,analyzed_studies
+Year Results First Received by ClinicalTrials.gov,resultsreceived_year,string,proj_results_reporting,projects,,,results reporting information,analyzed_studies
+Date Results First Received by ClinicalTrials.gov,firstreceived_results_dt,string,proj_results_reporting,projects,,,results reporting information,analyzed_studies
+"Months from Primary Completion to Results First Received.  Primary completion date is ony available as month/year, and so the time until results are reported is rounded up to the nearest month. For example if a study completed in April and reported results in April of the same year then t2result=1 month. ",t2result,string,proj_results_reporting,projects,,,results reporting information,analyzed_studies
+Months from primary completion to results first received (imputed)  If the primary completion month/year are missing then the imputed values are used.,t2result_imp,string,proj_results_reporting,projects,,,results reporting information,analyzed_studies
+"Months from primary completion to results first received/data download (for modeling).  If the study reported results then t2resmod=t2result_imp. If the study did not report results then the ""follow up time"" from the imputed primary completion month/year until the date of database download (September 2013) is calculated. This variable is used in time-to-event analyses (e.g., the Cox regression modeling).",t2resmod,string,proj_results_reporting,projects,,,results reporting information,analyzed_studies
+"Results reported within 12 months.  Derived from t2result_imp.  Since the time to results reporting is rounded up to the nearest month, a study with results was counted as having reported results within 12 months if t2result_imp <=13. (E.g., a study that completed in April of one year and reported results in April of the following year is counted as having reported results within 12 months.)  Otherwise if the study did not have results, or if t2result_imp>13 then the study was counted as not having reported results within 12 months.",results12,string,proj_results_reporting,projects,,,results reporting information,analyzed_studies
+"Delayed Results Information Reported by 27-Sep-2013.  Indicates whether a study submitted, by September 27 2013, a certification (of initial or new use) or requested a delay for some other reason to results reporting. ",delayed,string,proj_results_reporting,projects,,,information about delays to results reporting requirements,analyzed_studies
+Date When Delayed Results Certification or Request was Received,dr_received_dt,string,proj_results_reporting,projects,,,information about delays to results reporting requirements,analyzed_studies
+"Months from primary completion date to delayed results request.  Calculated from imputed values of primary completion month/year and dr_received_dt.  Since primary completion date is only available as month/year, this time is rounded up to the nearest month.",mn2delay,string,proj_results_reporting,projects,,,information about delays to results reporting requirements,analyzed_studies
+"Delayed Results Information Received within 12 months of Primary Completion.  Derived from mn2delay.  If delayed=0 or (delayed=1 and mn2delay is > 13) then delayed12=0.  Otherwise if delayed=1 and mn2delay is <=13 then delayed12=1. 13 months is used as the threshold because the value of mn2delay is rounde up to the nearest month.  E.g., a study that completed in April of one year and submitted a delay request in April of the following year is counted as having submitted a delay within 12 months.",delayed12,string,proj_results_reporting,projects,,,information about delays to results reporting requirements,analyzed_studies
+"Primary Key
+",id,integer,proj_results_reporting,projects,,13327,n/a,analyzed_studies
+Intervention group. Mutually exclusive grouping of studies according to intervention types.  If study has at least one device intervention then classified as Device study. Otherwise if study has at least one biological/vaccine intervention then classified as Biological study. Otherwise if study has at least one drug intervention then classified as Drug study. Otherwise classify as Other intervention study.,intervg1,string,proj_results_reporting,projects,"",,n/a,analyzed_studies
+Biological or Vaccine Intervention.  Study lists at least one biological or vaccine intervention type.,biological,string,proj_results_reporting,projects,"",,n/a,analyzed_studies
+Device Intervention.  Study lists at least one device intervention type.,device,string,proj_results_reporting,projects,"",,n/a,analyzed_studies
+Dietary Supplement Intervention.   Study lists at least one dietary supplement intervention type.,dietsup,string,proj_results_reporting,projects,"",,n/a,analyzed_studies
+Drug Intervention.  Study lists at least one drug intervention type,drug,string,proj_results_reporting,projects,"",,n/a,analyzed_studies
+Genetic Intervention.  Study lists at least one genetic intervention type.,genetic,string,proj_results_reporting,projects,"",,n/a,analyzed_studies
+Procedure or Surgery Intervention.  Study lists at least one procedure or surgery intervention type,procedure,string,proj_results_reporting,projects,"",,n/a,analyzed_studies
+Radiation Intervention.  Study lists at least one radiation intervention type.,radiation,string,proj_results_reporting,projects,"",,n/a,analyzed_studies
+Other Intervention. Study lists at least one other intervention type.,otherint,string,proj_results_reporting,projects,"",,n/a,analyzed_studies
+Product Manufactured in and Exported from the U.S.  Definition: Whether any drug product (including a biological product) or device product studied in the clinical study is manufactured in the United States or one of its territories and exported for study in a clinical study in another country. Select Yes/No.,is_us_export,boolean,ctgov,protocol,<html><u>HasExpandedAccess</u></html>,,ProtocalSection.OversightModule.IsUSExport,studies
+"",overall_status,string,ctgov,protocol,<html><u>OverallStatus</u></html>,,ProtocolSection.StatusModule.OverallStatus,studies
+"",is_fda_regulated_drug,boolean,ctgov,protocol,<html><u>FDADrugProduct</u></html>,,ProtocalSection.OversightModule.IsFDARegulatedDrug,studies
+"",enrollment_type,string,ctgov,protocol,<html><u>IntEnrollment</u></html>,,ProtocalSectionDesignModule.EnrollmentInfo.EnrollmentType,studies
+"",expanded_access_type_treatment,boolean,ctgov,protocol,<html><u>ExpandedAccessStatus</u></html>,,ProtocalSection.DesignModule.ExpandedAccessTypes.ExpAccTypeTreatment,studies
+"",units,string,ctgov,results,<html><u>Result_Baseline_ArmGroup_numUnitsAnalyzed</u></html>,,ResultsSection.BaselineCharacteristicsModule.BaselineDenomList.BaselineDenom.BaselineDenomUnits,baseline_counts

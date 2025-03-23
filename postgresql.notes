@@ -1,0 +1,7 @@
+sudo apt install postgresql-client-common
+sudo apt-get install postgresql
+pg_lsclusters
+sudo pg_ctlcluster 14 main start
+sudo service postgresql restart
+sudo -u postgres -i
+createuser --interactive rahak
